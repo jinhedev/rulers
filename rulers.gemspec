@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Rebuilding rails by Noah Gibbs.}
   spec.description   = %q{Similar to Ruby on Rails, Ruby on Rulers does pretty much the same thing. Sort of.}
-  spec.homepage      = "rulers.herokuapp.com"
+  spec.homepage      = "http://rulers.herokuapp.com"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -20,8 +20,8 @@ Gem::Specification.new do |spec|
     spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
     spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-    spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+    spec.metadata["source_code_uri"] = "https://github.com/jinhedev/rulers.git"
+    spec.metadata["changelog_uri"] = "https://raw.githubusercontent.com/jinhedev/rulers/master/CHANGELOG.md"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
