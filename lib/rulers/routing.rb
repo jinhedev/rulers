@@ -1,6 +1,9 @@
 module Rulers
   class Application
     def get_controller_and_action(env)
+      pp "------------------------- environment--------------------------"
+      pp env
+      pp "------------------------- environment--------------------------"
       _, cont, action, after = env["PATH_INFO"].split('/', 4) # cont == controller
       cont = cont.capitalize # "People"
       cont += "Controller" # PeopleController
