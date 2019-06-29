@@ -18,10 +18,10 @@ module Rulers
           controller = klass.new(env)
         begin
           text = controller.send(act) # assumes return is of string type
-          [200, { "Content-Type" => "text/html" }, [text]]
+          return [200, { "Content-Type" => "text/html" }, [text]]
         rescue
           text = "controller action not found #{act}"
-          [404, { "Content-Type" => "text/html" }, [text]]
+          return [404, { "Content-Type" => "text/html" }, [text]]
         end
       end
 
@@ -29,10 +29,10 @@ module Rulers
       controller = klass.new(env)
       begin
         text = controller.send(act) # return value of controller#act
-        [200, { "Content-Type" => "text/html" }, [text]]
+        return [200, { "Content-Type" => "text/html" }, [text]]
       rescue
         text = "controller action not found #{act}"
-        [400, { "Content-Type" => "text/html" }, [text]]
+        return [400, { "Content-Type" => "text/html" }, [text]]
       end
     end
   end
