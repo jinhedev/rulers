@@ -2,14 +2,18 @@ PATH
   remote: .
   specs:
     rulers (0.0.2)
+      byebug
       erubis
+      multi_json
       rack (~> 2.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    byebug (11.0.1)
     diff-lcs (1.3)
     erubis (2.7.0)
+    multi_json (1.13.1)
     power_assert (1.1.4)
     rack (2.0.7)
     rack-test (1.1.0)

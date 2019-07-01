@@ -4,6 +4,8 @@ require "rulers/util"
 require "rulers/dependencies"
 require "rulers/controller"
 
+require "rulers/file_model"
+
 module Rulers
   class Application
     def call(env)
@@ -12,18 +14,19 @@ module Rulers
         return [404, {'Content-Type' => 'text/html'}, []]
       end
 
-      if env['PATH_INFO'] == '/'
-          klass = Object.const_get("HomeController")
-          act = "index"
-          controller = klass.new(env)
-        begin
-          text = controller.send(act) # assumes return is of string type
-          return [200, { "Content-Type" => "text/html" }, [text]]
-        rescue
-          text = "controller action not found #{act}"
-          return [404, { "Content-Type" => "text/html" }, [text]]
-        end
-      end
+      # if env['PATH_INFO'] == '/'
+      #   byebug
+      #   klass = Object.const_get("HomeController")
+      #   act = "index"
+      #   controller = klass.new(env)
+      #   begin
+      #     text = controller.send(act) # assumes return is of string type
+      #     return [200, { "Content-Type" => "text/html" }, [text]]
+      #   rescue
+      #     text = "controller action not found #{act}"
+      #     return [404, { "Content-Type" => "text/html" }, [text]]
+      #   end
+      # end
 
       klass, act = get_controller_and_action(env)
       controller = klass.new(env)
